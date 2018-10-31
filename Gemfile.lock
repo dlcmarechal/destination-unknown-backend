@@ -47,7 +47,7 @@ GEM
       msgpack (~> 1.0)
     builder (3.2.3)
     byebug (10.0.2)
-    concurrent-ruby (1.1.0)
+    concurrent-ruby (1.0.5)
     crass (1.0.4)
     erubi (1.7.1)
     ffi (1.9.25)
@@ -146,7 +146,7 @@ DEPENDENCIES
   tzinfo-data
 
 RUBY VERSION
-   ruby 2.4.1p111
+   ruby 2.5.1p57
 
 BUNDLED WITH
    1.16.3
