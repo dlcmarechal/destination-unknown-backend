@@ -2,6 +2,7 @@ import json
 import os
 import random
 import settings as stt
+import sys
 
 def create_possible_suggestions(questions, answers, countries, country_information):
     suggestion_list = countries
@@ -19,18 +20,10 @@ def write_output_as_json(recommendation, filename):
     with open(cwd + '/' + filename, 'w') as outfile:
         json.dump(recommendation, outfile)
 
-questions_list = ["Avontuurlijk of ontspannen?",
-                  "Welke periode?",
-                  "Budget?",
-                  "Moet het warm zijn?"]
-
-answers_list = ["Avontuurlijk",
-                "Winter",
-                "Oneindig",
-                "Nee"]
-
-
 def main():
+    inputJson = json.loads(sys.argv[1])
+    questions_list = inputJson['questions_list']
+    answers_list = inputJson['answers_list']
     suggestions = create_possible_suggestions(questions=questions_list, answers=answers_list,
                                               countries=stt.list_of_countries,
                                               country_information=stt.list_of_dicts_country_information)
